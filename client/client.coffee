@@ -48,12 +48,12 @@ getTranslation = (searchTerm) ->
   #searchTerm = document.getElementById("searchInput").value 
   console.log searchTerm
   #languages = ['es', 'it', 'cs', 'de', 'fr', 'ru']
-  #languages = ['zh-CN', 'ja', 'ko-KR', 'ru', 'ru-RU', 'de-DE', 'it', 'fr-FR', 'es-US']
+  languages = ['zh-CN', 'ja', 'ko-KR', 'ar-SA', 'ru-RU', 'de-DE', 'it', 'fr-FR', 'es-US']
   #languages = ['zh-CN', 'ja', 'ko-KR', 'ru']
-  languages = ['zh-CN']
+  #languages = ['zh-CN']
   window.translated = [{lang:'original', text: searchTerm}]
   window.search_results = []
-  #doImageSearch2(searchTerm)
+  doImageSearch2(searchTerm)
   languages.forEach (language) ->
     Meteor.call('getfromMyMemory', searchTerm, language, (err, res) ->
       #Session.set 'translation', res.data.matches[0].translation
