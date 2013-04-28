@@ -34,18 +34,16 @@ doImageSearch2 = (query) ->
         el = "<div class='box'><img src=#{result.image} alt=#{result.query}></div>"
         $('#results').append(el).masonry('reload')
         i++
-        if i is res.data.items.length
-          console.log 'done'
 
 getTranslation = ->
   searchTerm = document.getElementById("searchInput").value
   console.log searchTerm
   #languages = ['es', 'it', 'cs', 'de', 'fr', 'ru']
   #languages = ['zh-CN', 'ja', 'ko-KR', 'ru', 'ru-RU', 'de-DE', 'it', 'fr-FR', 'es-US']
-  languages = ['zh-CN', 'ja', 'ko-KR']
+  languages = ['zh-CN']
   window.translated = [{lang:'original', text: searchTerm}]
   window.search_results = []
-  doImageSearch2(searchTerm)
+  #doImageSearch2(searchTerm)
   languages.forEach (language) ->
     Meteor.call('getfromMyMemory', searchTerm, language, (err, res) ->
       #Session.set 'translation', res.data.matches[0].translation
@@ -108,8 +106,11 @@ Template.main.events
  	  console.log 'hello'
     getTranslation()
     $('.center').hide()
+    Session.set 'is_result', true
+
 
   "keypress input.main-search": (evt) ->
     if evt.which is 13
       getTranslation()
       $('.center').hide()
+      Session.set 'is_result', true
