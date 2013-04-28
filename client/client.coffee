@@ -1,3 +1,12 @@
+Meteor.startup ->
+  console.log 'start'
+  test = ->
+    console.log 'dynamo!'
+    $('.dynamo').dynamo()
+
+  $('body').ready test()
+
+
 on_that_masonry = (results)->
   console.log 'masonry'
   $container = $("#results")
@@ -103,7 +112,7 @@ Template.results.results = ->
 
 
 Template.main.events
-  "click a#search-button": ->
+  "click #search-button": ->
  	  console.log 'hello'
     $('body').css({"background-color":"white"})
     getTranslation(document.getElementById("searchInput").value)

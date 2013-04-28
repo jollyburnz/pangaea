@@ -141,6 +141,21 @@ h1, h2, h3, h4, h5, h6 {
     margin-top:10px;
     background:#a1d499;
 }
+#search-button{
+  text-align: center !important;
+  background: url('../../img/Search-Static01.png') no-repeat center center;
+  width: 203px;
+  height: 43px;
+  float: left;
+  margin-left: -99px;
+  position: relative;
+  left: 50%;
+}
+
+#search-button a{
+  color: #fff;
+  text-decoration: none;
+}
 
 .submitMain{margin-top:10px;}
 
