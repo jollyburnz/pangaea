@@ -40,7 +40,8 @@ getTranslation = (searchTerm) ->
   console.log searchTerm
   #languages = ['es', 'it', 'cs', 'de', 'fr', 'ru']
   #languages = ['zh-CN', 'ja', 'ko-KR', 'ru', 'ru-RU', 'de-DE', 'it', 'fr-FR', 'es-US']
-  languages = ['zh-CN', 'ja', 'ko-KR', 'ru']
+  #languages = ['zh-CN', 'ja', 'ko-KR', 'ru']
+  languages = ['zh-CN']
   window.translated = [{lang:'original', text: searchTerm}]
   window.search_results = []
   #doImageSearch2(searchTerm)
