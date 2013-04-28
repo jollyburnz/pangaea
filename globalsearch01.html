@@ -1,10 +1,22 @@
 <head>
-  <title>globalsearch01</title>
+  <title>Pangaea</title>
 </head>
 
 <body>
+  {{> results}}
+  {{> main}}
   {{> search}}
 </body>
+
+<template name="main">
+  <div class="center">
+      <div style="margin-bottom:25px;"><img src="img/PangaeaLogo.png"></div> 
+          <input id="searchInput" type="text" style="padding:10px;" class="input-large search-query-results main-search">
+          <br />
+          <br />
+      <a id="search-button"><img src="img/Search-Static.png" border="0" class="submitMain"></a>
+  </div>
+</template>
 
 <template name="search">
   <h1>Global Search</h1>
@@ -12,11 +24,19 @@
   {{#each translated}}
     <div><h2>{{lang}} - {{text}}</h2></div>
   {{/each}}
-  
-  {{#each results}}
-    <img title={{query}} src={{image}}>
-  {{/each}}
-  <input id="searchInput" class="searchTerm" type="text" />
-  <input type="button" class="search" value="Search" />
-  <div id="results"></div>
+</template>
+
+<template name="results">
+  <div class="results-header">
+    <div class="logo"> <a href="main.html"><img src="img/results/PangaeaLogoSmall.png"></a> </div>
+    <div class="top-search">
+        <input type="text" class="input-large search-query-results" placeholder="Search Anything">
+        <button type="submit" class="btn search-mit">Search</button>
+    </div>
+  </div> 
+  <div class="container-fluid" style="margin-top:85px;">
+    <div class="row-fluid">
+    <div id="results"></div>
+    </div>
+  </div>
 </template>

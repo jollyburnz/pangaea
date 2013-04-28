@@ -1,0 +1,166 @@
+/* CSS declarations go here */
+
+@font-face {
+    font-family: 'TeXGyreCursorRegular';
+    src: url('../font/TeX-Gyre-Cursor/texgyrecursor-regular-webfont.eot');
+    src: url('../font/TeX-Gyre-Cursor/texgyrecursor-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/TeX-Gyre-Cursor/texgyrecursor-regular-webfont.woff') format('woff'),
+         url('../font/TeX-Gyre-Cursor/texgyrecursor-regular-webfont.ttf') format('truetype'),
+         url('../font/TeX-Gyre-Cursor/texgyrecursor-regular-webfont.svg#TeXGyreCursorRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TeXGyreCursorBold';
+    src: url('../font/TeX-Gyre-Cursor/texgyrecursor-bold-webfont.eot');
+    src: url('../font/TeX-Gyre-Cursor/texgyrecursor-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/TeX-Gyre-Cursor/texgyrecursor-bold-webfont.woff') format('woff'),
+         url('../font/TeX-Gyre-Cursor/texgyrecursor-bold-webfont.ttf') format('truetype'),
+         url('../font/TeX-Gyre-Cursor/texgyrecursor-bold-webfont.svg#TeXGyreCursorBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background: #a3d29c;
+}
+
+img {
+    max-width: 100%;
+}
+a {
+    white-space: nowrap;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-family: Arial, sans-serif;
+    letter-spacing: 0;
+}
+
+
+.page-header {
+    padding-bottom: 0;
+    color: #393939;
+}
+
+.page-header h1 {
+    font: 38px/57px 'TeXGyreCursorBold', Arial, sans-serif;
+}
+.page-header a {
+    color: #393939;
+}
+.page-header a:hover {
+    color: #333333;
+    text-decoration: none;
+}
+
+/* Results Page  */
+
+.results-header{
+    background: #000; 
+    width:100%; 
+    height: 70px; 
+    position:fixed; 
+    z-index: 99; 
+    top:0;
+}
+
+.results-header .logo{
+    float:left;
+    color:fff;
+    font-size: 18px;
+    width: 200px;
+    margin-left: 26px;
+    margin-top: 15px;
+}
+
+.navbar div.brand{
+    text-align: left;
+    width: 100%;
+    float: none;
+    background:#000;
+}
+
+.navbar .nav > li > a {
+    float: none;
+    color: #393939;
+    font-size: 18px;
+    line-height: 19px;
+    text-decoration: none;
+    text-shadow: none;
+    margin-right: 32px;
+}
+
+.box {
+  width: 150px;
+  display: inline-block;
+  vertical-align: top;
+  overflow:hidden;
+}
+
+.homeSearch{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 190px;
+  height: 90px;
+  line-height: 90px;
+  text-align: center;
+  margin-top: -50px;
+  margin-left: -100px;
+  border:5px solid black;
+}
+
+#lang{
+    background: #333745;
+    width: 300px;
+    height: 38px;
+    color: #fff;
+    font-family: arial;
+    text-align: center;
+    padding-top: 16px;
+}
+
+.globe{
+    background: #ecf0f1;
+    height: 100%;
+    width: 100%;
+}
+
+.top-search{
+    float:left;
+    margin-top: 9px;
+}
+
+.search-mit{
+    margin-top:10px;
+    background:#a1d499;
+}
+
+.submitMain{margin-top:10px;}
+
+.center{
+    width:500px;
+    height:300px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-150px 0 0 -250px;
+    text-align: center;
+}
+
+.main-search{padding:5px;}
+
+footer {
+    font-family: 'TeXGyreCursorRegular', Arial, sans-serif;
+    border-top: 1px solid #ddd;
+    margin-top: 35px;
+    padding-top: 6px;
+    text-align: center;
+    font-size: 12px;
+}

@@ -1,7 +1,24 @@
+on_that_masonry = (results)->
+  console.log 'masonry'
+  $container = $("#results")
+  gutter = 0
+  min_width = 80
+  $container.imagesLoaded ->
+    console.log 'LOADED'
+    $container.masonry
+      itemSelector: ".box"
+      gutterWidth: gutter
+      isAnimated: true
+      columnWidth: (containerWidth) ->
+        num_of_boxes = (containerWidth / min_width | 0)
+        box_width = (((containerWidth - (num_of_boxes - 1) * gutter) / num_of_boxes) | 0)
+        box_width = containerWidth  if containerWidth < min_width
+        $(".box").width box_width
+        box_width
+
 doImageSearch2 = (query) ->
   #Meteor.call 'getfromGoogle', searchTerm, (err, res) ->
   #  Session.set 'data', res  if !err
-
   Meteor.call 'getfromCSE', query, (err, res) ->
     console.log res
     if !err
@@ -13,14 +30,19 @@ doImageSearch2 = (query) ->
         search_results.push result
         console.log search_results
         Session.set 'images', search_results
+        on_that_masonry()
+        el = "<div class='box'><img src=#{result.image} alt=#{result.query}></div>"
+        $('#results').append(el).masonry('reload')
         i++
+        if i is res.data.items.length
+          console.log 'done'
 
 getTranslation = ->
   searchTerm = document.getElementById("searchInput").value
   console.log searchTerm
   #languages = ['es', 'it', 'cs', 'de', 'fr', 'ru']
   #languages = ['zh-CN', 'ja', 'ko-KR', 'ru', 'ru-RU', 'de-DE', 'it', 'fr-FR', 'es-US']
-  languages = ['zh-CN', 'ja', 'ru']
+  languages = ['zh-CN', 'ja', 'ko-KR']
   window.translated = [{lang:'original', text: searchTerm}]
   window.search_results = []
   doImageSearch2(searchTerm)
@@ -68,6 +90,8 @@ doImageSearch = ->
         #console.log image.link
         $results.append "<img src=#{image.image.thumbnailLink}>"
         i++
+        console.log i
+
 
 Template.search.greeting = ->
   Session.get 'name'
@@ -75,22 +99,17 @@ Template.search.greeting = ->
 Template.search.translated = ->
   Session.get 'langs'
 
-Template.search.results = ->
+Template.results.results = ->
   Session.get 'images'
 
-#Template.search.translation = ->
-  #yq = encodeURIComponent("select json.json.json from google.translate where q='" + addslashes(message.text) + "' and source='" + message.userlang + "' and target='" + Session.get("userlang") + "' limit 1")
-  #$.YQL yq, (data) ->
-  #  post = data.query.results.json.json.json.json
-  #  if post
 
-Template.search.events
-  "click input.search": ->
+Template.main.events
+  "click a#search-button": ->
  	  console.log 'hello'
-    #doImageSearch()
     getTranslation()
+    $('.center').hide()
 
-  "keypress input.searchTerm": (evt) ->
+  "keypress input.main-search": (evt) ->
     if evt.which is 13
-      #doImageSearch()
       getTranslation()
+      $('.center').hide()
