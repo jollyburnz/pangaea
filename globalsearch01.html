@@ -1,0 +1,22 @@
+<head>
+  <title>globalsearch01</title>
+</head>
+
+<body>
+  {{> search}}
+</body>
+
+<template name="search">
+  <h1>Global Search</h1>
+  <h1>{{greeting}}</h1>
+  {{#each translated}}
+    <div><h2>{{lang}} - {{text}}</h2></div>
+  {{/each}}
+  
+  {{#each results}}
+    <img title={{query}} src={{image}}>
+  {{/each}}
+  <input id="searchInput" class="searchTerm" type="text" />
+  <input type="button" class="search" value="Search" />
+  <div id="results"></div>
+</template>
