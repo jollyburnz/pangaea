@@ -156,6 +156,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-search{padding:5px;}
 
+input.search-query-results {
+  padding-right: 14px;
+  padding-right: 4px \9;
+  padding-left: 14px;
+  padding-left: 4px \9;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0;
+  margin-top:10px;
+  width: 400px;
+}
+
 footer {
     font-family: 'TeXGyreCursorRegular', Arial, sans-serif;
     border-top: 1px solid #ddd;

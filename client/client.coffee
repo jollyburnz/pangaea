@@ -35,8 +35,8 @@ doImageSearch2 = (query) ->
         $('#results').append(el).masonry('reload')
         i++
 
-getTranslation = ->
-  searchTerm = document.getElementById("searchInput").value
+getTranslation = (searchTerm) ->
+  #searchTerm = document.getElementById("searchInput").value 
   console.log searchTerm
   #languages = ['es', 'it', 'cs', 'de', 'fr', 'ru']
   #languages = ['zh-CN', 'ja', 'ko-KR', 'ru', 'ru-RU', 'de-DE', 'it', 'fr-FR', 'es-US']
@@ -104,13 +104,26 @@ Template.results.results = ->
 Template.main.events
   "click a#search-button": ->
  	  console.log 'hello'
-    getTranslation()
-    $('.center').hide()
+    $('body').css({"background-color":"white"})
+    getTranslation(document.getElementById("searchInput").value)
     Session.set 'is_result', true
 
 
   "keypress input.main-search": (evt) ->
     if evt.which is 13
-      getTranslation()
-      $('.center').hide()
+      $('body').css({"background-color":"white"})
+      getTranslation(document.getElementById("searchInput").value)
+      Session.set 'is_result', true
+
+Template.results_header.events
+  "click button.search-mit": ->
+    $('body').css({"background-color":"white"})
+    getTranslation($('.search-query-results').val())
+    Session.set 'is_result', true
+
+
+  "keypress input.search-query-results": (evt) ->
+    if evt.which is 13
+      $('body').css({"background-color":"white"})
+      getTranslation(('.search-query-results').val())
       Session.set 'is_result', true
