@@ -28,8 +28,9 @@ Meteor.startup ->
     getfromCSE: (query) ->
       #apikey = 'AIzaSyBgAgezQXB3f8tG33jjHU-OnQw0VdaGmEo' #think.jackson@gmail.com
       #apikey = 'AIzaSyC799a059XAwFmRcbHo2JbFm7uT_El7fh8' #jollyburnz@gmail.com
-      apikey = 'AIzaSyBmOcm083O3k7QwXhFy7l7eiFbn9Ci8-DA' #tcnamenamename@gmail.com
-      cx = '008968953878315084217:a1v14hrmkdc'
+      #apikey = 'AIzaSyCSjt_YVlS0qIAY_ppho573PAqU_LE-304' #tcnamenamename@gmail.com
+      apikey = 'AIzaSyCsn1xchEQmqoPydedp6_VD1GKGe5xl65g' #tcnamenamename02@gmail.com
+      cx = '005153554774963151093:iikbqfn8gwo'
       url = 'https://www.googleapis.com/customsearch/v1?key=' + apikey + '&cx=' + cx + '&q=' + query + '&searchType=image'
       console.log url, query
       fut = new Future()
