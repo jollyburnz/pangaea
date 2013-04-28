@@ -40,7 +40,7 @@ doImageSearch2 = (query) ->
         console.log search_results
         Session.set 'images', search_results
         on_that_masonry()
-        el = "<div class='box'><img src=#{result.image} alt=#{result.query}></div>"
+        el = "<div class='box'><img src=#{result.image} title=#{result.query}></div>"
         $('#results').append(el).masonry('reload')
         i++
 
