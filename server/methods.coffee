@@ -26,14 +26,20 @@ Meteor.startup ->
       console.log fut.wait()
 
     getfromCSE: (query) ->
-      apikey = 'AIzaSyAoWqOndvtaDa1wPV6yBbPzBLSjkuub-hY' #tcnamenamename03@gmail.com BACKUP!!
-      cx = '003613587362386192085:2ytzhiouvga' #tcnamenamename03@gmail.com BACKUP!!
+      #apikey = 'AIzaSyCsn1xchEQmqoPydedp6_VD1GKGe5xl65g' #tcnamenamename02@gmail.com
+      #cx = '005153554774963151093:iikbqfn8gwo' #tcnamenamename02@gmail.com
+
+      #apikey = 'AIzaSyAoWqOndvtaDa1wPV6yBbPzBLSjkuub-hY' #tcnamenamename03@gmail.com BACKUP!!
+      #cx = '003613587362386192085:2ytzhiouvga' #tcnamenamename03@gmail.com BACKUP!!
+
+      #apikey = 'AIzaSyDRmrcAst-G7UPEd-PBdDWu-zONbiW2zs8' #tcnamenamename04@gmail.com BACKUP!!
+      #cx = '008744167617995699754:ik1op1cei1k' #tcnamenamename04@gmail.com BACKUP!!      
 
       #apikey = 'AIzaSyBgAgezQXB3f8tG33jjHU-OnQw0VdaGmEo' #think.jackson@gmail.com
-      #apikey = 'AIzaSyC799a059XAwFmRcbHo2JbFm7uT_El7fh8' #jollyburnz@gmail.com
+      apikey = 'AIzaSyC799a059XAwFmRcbHo2JbFm7uT_El7fh8' #jollyburnz@gmail.com
+      cx = '009237180780524660693:7amculflz40'
       #apikey = 'AIzaSyCSjt_YVlS0qIAY_ppho573PAqU_LE-304' #tcnamenamename@gmail.com
-      #apikey = 'AIzaSyCsn1xchEQmqoPydedp6_VD1GKGe5xl65g' #tcnamenamename02@gmail.com
-      #cx = '005153554774963151093:iikbqfn8gwo'
+  
 
 
       url = 'https://www.googleapis.com/customsearch/v1?key=' + apikey + '&cx=' + cx + '&q=' + query + '&searchType=image'
